@@ -50,6 +50,7 @@ def handle_configure(client, request):
         send_response(client, "SSID must be provided", status_code=400)
         return
     
+    wlan_sta.active(True)
     wlan_sta.connect(ssid, password)
     
     send_response(client, "Wi-Fi configured for SSID {}".format(ssid))
