@@ -48,6 +48,7 @@ def handle_configure(client, request):
     
     if len(ssid) == 0:
         send_response(client, "SSID must be provided", status_code=400)
+        return
     
     wlan_sta.connect(ssid, password)
     
