@@ -43,6 +43,7 @@ def handle_configure(client, request):
     
     if match is None:
         send_response(client, "Parameters not found", status_code=400)
+        return
     
     ssid = match.group(1)
     password = match.group(2)
