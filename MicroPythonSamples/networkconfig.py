@@ -70,9 +70,6 @@ def start(port=80):
     
     stop()
     
-    if server_socket:
-        server_socket.close()
-    
     server_socket = socket.socket()
     server_socket.bind(addr)
     server_socket.listen(1)
