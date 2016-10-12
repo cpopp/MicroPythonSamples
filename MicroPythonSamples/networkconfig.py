@@ -13,8 +13,6 @@ def send_response(client, payload, status_code=200):
     client.sendall("Content-Length: {}\r\n".format(len(payload)))
     client.sendall("\r\n")
     
-    print("Send header")
-    
     if len(payload) > 0:
         client.sendall(payload)
 
