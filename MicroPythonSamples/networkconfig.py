@@ -96,7 +96,7 @@ def start(port=80):
             client.close()
             continue
         
-        url = ure.search("(?:GET|POST) /(.*?)(?:\\?.*?)? HTTP", request).group(1).rstrip("/")
+        url = ure.search("(?:GET|POST) /(.*?)(?:\\?.*?)? HTTP", request.decode('ascii')).group(1).rstrip("/")
         print("URL is {}".format(url))
 
         if url == "":
